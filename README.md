@@ -1,5 +1,5 @@
 # Play With K8s 
-Persistent Volume and Claim
+Persistent Volume and Claim: Local-Storage
 
 ## Set up the LAB 
 Step 1 
