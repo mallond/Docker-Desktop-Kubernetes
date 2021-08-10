@@ -101,8 +101,10 @@ kubectl create -f https://raw.githubusercontent.com/mallond/Kubernetes-Labs-PV/m
 ```
 kubectl get pod task-pv-pod 
 ```
-> GOTCHA - Sometimes the create pods works right from the start; howver, if not DEBUG
-> kubectl get pod task-pv-pod 
+> GOTCHA - Sometimes the create pods works right from the start; howver, if not DEBUG  
+
+> kubectl get pod task-pv-pod   
+
 > [Taints and Tolerations](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 
 ```
