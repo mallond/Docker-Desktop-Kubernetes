@@ -60,3 +60,12 @@ out:
 NAME          CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS       REASON   AGE
 my-local-pv   500Gi      RWO            Retain           Available           my-local-storage            5m46s
 ```
+
+### Step 5 Create PODS
+```
+kubectl create -f  https://raw.githubusercontent.com/mallond/Docker-Desktop-Kubernetes/main/http-pod.yaml
+```  
+out: pod/www created  
+```
+kubectl get pods
+```
