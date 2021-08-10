@@ -32,10 +32,19 @@ cat /mnt/data/index.html
 ```
 out: storageclass.storage.k8s.io/my-local-storage created
 
-### Step 2 Create Volume
+### Step 2 Create Presistent Volume and Presistent Volume Claim
 ```
-mkdir /mnt/disk/vol1
+kubectl apply -f https://raw.githubusercontent.com/mallond/Kubernetes-Labs-PV/main/pv-volume.yaml
 ```
+```
+kubectl get pv task-pv-volume
+```
+```
+out:
+NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+task-pv-volume   10Gi       RWO            Retain           Available           manual                  21s
+```
+
 out: Will list the directory...
 
 ### Step 3 Create Persistent Volume 500Gi
