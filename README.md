@@ -1,8 +1,7 @@
 # Play With K8s 
 Persistent Volume and Claim: Local-Storage
 
-## Set up the LAB 
-Step 1 
+## Step 1 - Set up the LAB 
 ```
 https://labs.play-with-k8s.com/
 ```
@@ -15,9 +14,9 @@ Step 3 Initialize cluster networking:
 kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter.yaml
 ```
 
-## Steps
 
-### Step 1 Setup Local Shared Folder
+
+## Step 2 - Setup Local Shared Folder
 ```
 mkdir /mnt/data
 ```  
@@ -32,7 +31,7 @@ cat /mnt/data/index.html
 ```
 out: storageclass.storage.k8s.io/my-local-storage created
 
-### Step 2 Create Presistent Volume and Presistent Volume Claim
+## Step 3 - Create Presistent Volume and Presistent Volume Claim
 ```
 kubectl apply -f https://raw.githubusercontent.com/mallond/Kubernetes-Labs-PV/main/pv-volume.yaml
 ```
@@ -58,7 +57,7 @@ task-pv-volume   10Gi       RWO            Retain           Bound    default/tas
 ```
 
 
-### Step 3 Create Persistent Volume 500Gi
+## Step 4 Create Pods
 ```
 kubectl get nodes --show-labels
 ```
