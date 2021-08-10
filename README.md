@@ -17,10 +17,19 @@ kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/m
 
 ## Steps
 
-### Step 1 Create Storage Class
+### Step 1 Setup Local Shared Folder
 ```
-kubectl create -f https://raw.githubusercontent.com/mallond/Docker-Desktop-Kubernetes/main/storageClass.yaml
+mkdir /mnt/data
 ```  
+```
+chmod 777 /mnt/data
+```
+```
+sh -c "echo 'Hello from Kubernetes storage' > /mnt/data/index.html"
+```
+```
+cat /mnt/data/index.html
+```
 out: storageclass.storage.k8s.io/my-local-storage created
 
 ### Step 2 Create Volume
