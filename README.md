@@ -45,7 +45,18 @@ NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   
 task-pv-volume   10Gi       RWO            Retain           Available           manual                  21s
 ```
 
-out: Will list the directory...
+```
+kubectl apply -f https://raw.githubusercontent.com/mallond/Kubernetes-Labs-PV/main/pv-claim.yaml
+```
+```
+kubectl get pv task-pv-volume
+```
+```
+out:
+NAME             CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                   STORAGECLASS   REASON   AGE
+task-pv-volume   10Gi       RWO            Retain           Bound    default/task-pv-claim   manual                  3m56s
+```
+
 
 ### Step 3 Create Persistent Volume 500Gi
 ```
