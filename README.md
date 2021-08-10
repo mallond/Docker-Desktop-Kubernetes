@@ -1,15 +1,18 @@
-# Docker-Desktop-Kubernetes
-Docker Desktop Kubernetes - Persistent Volume and Claim
+# Play With K8s 
+Persistent Volume and Claim
 
-## Environment
+## Set up the LAB 
+Step 1 
 ```
-Using PowerShell 7 and Windows Docker Desktop Kubernetes
-Kubernetes v1.21.2
-PowerShell 7.0.6
-Windows 10 Enterprise 19041.1110
-Docker Community 20.10.7
-Ubuntu 20.x
-
+https://labs.play-with-k8s.com/
+```
+Step 2 Initializes cluster master node:
+```
+kubeadm init --apiserver-advertise-address $(hostname -i) --pod-network-cidr 10.5.0.0/16
+```
+Step 3 Initialize cluster networking:
+```
+kubectl apply -f https://raw.githubusercontent.com/cloudnativelabs/kube-router/master/daemonset/kubeadm-kuberouter.yaml
 ```
 
 ## Steps
