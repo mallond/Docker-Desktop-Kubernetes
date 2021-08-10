@@ -117,7 +117,19 @@ Events:
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
+
+Once the taint is removed (if needed) Test your work
 ```
-kubectl taint nodes --all node-role.kubernetes.io/master-
+> kubectl exec -it task-pv-pod -- /bin/bash
+# Once in the POD
+> apt update
+> apt install curl
+> curl http://localhost/
+# Change the local content
+> curl http://localhost/
+
+There you go!
+
 ```
+
 
