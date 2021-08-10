@@ -51,4 +51,4 @@ spec:
   storageClassName: jenkins-storage
   resources:
     requests:
-      storage: 10Gi
+      storage: 10Gi 
