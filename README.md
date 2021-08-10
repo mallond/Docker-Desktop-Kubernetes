@@ -94,9 +94,30 @@ my-local-pv   500Gi      RWO            Retain           Available           my-
 
 ### Step 5 Create PODS
 ```
-kubectl create -f  https://raw.githubusercontent.com/mallond/Docker-Desktop-Kubernetes/main/http-pod.yaml
+kubectl create -f https://raw.githubusercontent.com/mallond/Kubernetes-Labs-PV/main/pv-pod.yaml
 ```  
-out: pod/www created  
 ```
-kubectl get pods
+kubectl get pod task-pv-pod 
 ```
+> GOTCHA - Sometimes the create pods works right from the start; howver, if not DEBUG
+> kubectl get pod task-pv-pod
+
+```
+kubectl describe  -f https://k8s.io/examples/pods/storage/pv-pod.yaml
+```
+```
+out:
+You will see by the describe that this pod is tainted and needs to have this removed
+Events:
+  Type     Reason            Age                 From               Message
+  ----     ------            ----                ----               -------
+  Warning  FailedScheduling  71s (x27 over 28m)  default-scheduler  0/1 nodes are available: 1 node(s) had taint {node-role.kubernetes.io/master: }, that the pod didn't tolerate.
+
+```
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
