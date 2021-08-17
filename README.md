@@ -139,4 +139,17 @@ There you go!
 
 # Other
 -  gcr.io/google-samples/hello-app:1.0 Great node that will print the pods unique address 
+- 
+```
+apply/create - create resource(s) 
+run - start a pod from an image 
+explain - documentation of resources 
+delete - delete resource(s) 
+get - list resources 
+describe - detailed resource information 
+exec - execute a command on a container 
+logs - view logs on a container
+```
+- https://kubernetes.io/docs/reference/kubectl/kubectl/  
+- https://kubernetes.io/docs/reference/kubectl/cheatsheet/  
 
