@@ -175,6 +175,9 @@ kubectl create -h | more
 
 # Hello World Exercise - Muscle memory
 kubectl run hello-world-pod --image=gcr.io/google-samples/hello-app:1.0
+ and/or  
+kubectl create deployment hello-world \
+     --image=gcr.io/google-samples/hello-app:1.0  
 kubectl get pods
 kubectl get pods -o wide
 ssh aen@c1-node[XX]
