@@ -153,3 +153,86 @@ logs - view logs on a container
 - https://kubernetes.io/docs/reference/kubectl/kubectl/  
 - https://kubernetes.io/docs/reference/kubectl/cheatsheet/  
 
+```
+kubectl cluster-info
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl get pods 
+kubectl get pods --namespace kube-system
+kubectl get pods --namespace kube-system -o wide
+kubectl get all --all-namespaces | more
+kubectl api-resources | more
+kubectl api-resources | grep pod
+kubectl explain pod | more 
+kubectl explain pod.spec | more 
+kubectl explain pod.spec.containers | more 
+kubectl explain pod --recursive | more 
+kubectl describe nodes c1-cp1 | more 
+kubectl describe nodes c1-node1 | more
+kubectl -h | more
+kubectl get -h | more
+kubectl create -h | more
+
+# Hello World Exercise - Muscle memory
+kubectl run hello-world-pod --image=gcr.io/google-samples/hello-app:1.0
+kubectl get pods
+kubectl get pods -o wide
+ssh aen@c1-node[XX]
+sudo docker ps
+kubectl logs hello-world-pod
+kubectl exec -it hello-world-pod -- /bin/sh
+kubectl get deployment hello-world
+kubectl get replicaset
+kubectl get pods
+kubectl describe deployment hello-world | more
+kubectl describe replicaset hello-world | more
+kubectl describe pod hello-world-[tab][tab] | more
+kubectl expose deployment hello-world \
+     --port=80 \
+     --target-port=8080
+kubectl get service hello-world
+kubectl describe service hello-world
+curl http://$SERVCIEIP:$PORT
+kubectl get endpoints hello-world
+curl http://$ENDPOINT:$TARGETORT
+kubectl get deployment hello-world -o yaml | more 
+kubectl get deployment hello-world -o json | more 
+kubectl get all
+kubectl delete service hello-world
+kubectl delete deployment hello-world
+kubectl delete pod hello-world-pod
+kubectl get all
+kubectl create deployment hello-world \
+     --image=gcr.io/google-samples/hello-app:1.0 \
+     --dry-run=client -o yaml | more 
+kubectl create deployment hello-world \
+     --image=gcr.io/google-samples/hello-app:1.0 \
+     --dry-run=client -o yaml > deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl expose deployment hello-world \
+     --port=80 --target-port=8080 \
+     --dry-run=client -o yaml | more
+kubectl expose deployment hello-world \
+     --port=80 --target-port=8080 \
+     --dry-run=client -o yaml > service.yaml 
+kubectl apply -f service.yaml 
+kubectl get all
+
+#Scale up our deployment...in code
+vi deployment.yaml
+Change spec.replicas from 1 to 20
+     replicas: 20
+
+kubectl apply -f deployment.yaml
+kubectl get deployment hello-world
+kubectl get pods | more 
+kubectl edit deployment hello-world
+kubectl get deployment hello-world
+kubectl scale deployment hello-world --replicas=40
+kubectl get deployment hello-world
+
+kubectl delete deployment hello-world
+kubectl delete service hello-world
+kubectl get all
+
+```
