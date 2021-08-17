@@ -137,4 +137,6 @@ There you go!
 
 ```
 
+# Other
+-  gcr.io/google-samples/hello-app:1.0 Great node that will print the pods unique address 
 
