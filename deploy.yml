@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-deploy
+  name: hello-world-deploy
 spec:
   replicas: 10
   selector:
@@ -19,7 +19,7 @@ spec:
         app: hello-world-pod
     spec:
       containers:
-      - name: hello-pod
+      - name: hello-world-pod
         image: gcr.io/google-samples/hello-app:1.0
         ports:
         - containerPort: 8080
