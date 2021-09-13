@@ -19,7 +19,7 @@ spec:
         app: hello-world-pod
     spec:
       containers:
-      - name: hello-world-pod
+      - name: hello-pod
         image: gcr.io/google-samples/hello-app:1.0
         ports:
         - containerPort: 8080
